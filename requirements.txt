@@ -17,7 +17,6 @@ backports.shutil-get-terminal-size==1.0.0
 backports.tempfile==1.0
 backports.weakref==1.0.post1
 base58==2.0.1
-basemap==1.2.0
 bcrypt==3.1.7
 beautifulsoup4==4.9.0
 bitarray==1.2.1
