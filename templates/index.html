@@ -4,25 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Car Predictive Analysis</title>
 </head>
 
 <body>
 
+
+    <div class="container">
     <div style="color:white">
         <form action="{{ url_for('predict')}}" method="post">
             <h2>Predictive analysis</h2>
             <h3>Year</h3>
             <input id="first" name="Year" type="number ">
-            <h3>What is the Showroom Price?(In lakhs)</h3><br><input id="second" name="Present_Price" required="required">
+            <h3>What is the Showroom Price? (In lakhs)</h3><br><input id="second" name="Present_Price" required="required">
             <h3>How Many Kilometers Drived?</h3><input id="third" name="Kms_Driven" required="required">
-            <h3>How much owners previously had the car(0 or 1 or 3) ?</h3><br><input id="fourth" name="Owner" required="required">
+            <h3>How much owners previously had the car (0 or 1 or 3)?</h3><br><input id="fourth" name="Owner" required="required">
             <h3>What Is the Fuel type?</h3><br><select name="Fuel_Type_Petrol" id="fuel" required="required">
                 <option value="Petrol">Petrol</option>
                 <option value="Diesel">Diesel</option>
                 <option value="Diesel">CNG</option>
             </select>
-            <h3>Are you A Dealer or Individual</h3><br><select name="Seller_Type_Individual" id="resea" required="required">
+            <h3>Are you A Dealer or Individual?</h3><br><select name="Seller_Type_Individual" id="resea" required="required">
                 <option value="Dealer">Dealer</option>
                 <option value="Individual">Individual</option>
             </select>
@@ -30,7 +32,7 @@
                 <option value="Mannual">Manual Car</option>
                 <option value="Automatic">Automatic Car</option>
             </select>
-            <br><br><button id="sub" type="submit ">Calculate the Selling Price</button>
+            <br><br><button name="sub" id="sub" type="submit ">Calculate the Selling Price</button>
             <br>
 
 
@@ -40,19 +42,49 @@
 
 
 
-        <br><br><h3>{{ prediction_text }}<h3>
+        <!-- <br><br><h3>{{ prediction_text }}<h3> -->
     </div>
+</div>
 
 
 
 
     <style>
-        body {
-            background-color: indigo;
-            text-align: center;
-            padding: 0px;
+
+        *{
+            box-sizing: border-box;
         }
-        
+
+        body {
+            background: url(background/bg5.jpg) no-repeat center center/cover;
+            text-align: center;
+            /* padding: 0px;
+            box-sizing: border-box; */
+            font-family: cursive;
+            margin: 15px 30px;
+            font-size: 17px;
+            padding: 12px;
+        }
+
+        .container {
+        /* background-color: rgb(241, 221, 193); */
+        padding: 5px 20px 15px 20px;
+        /* border: 1px solid lightcyan; */
+        border-radius: 4px;
+        }
+
+        h2{
+            /* border: 2px solid red; */
+            color:brown;
+            font-size: 55px;
+            font-style: italic;
+        }
+
+        h3{
+            /* color:rgb(4, 5, 83); */
+            color: rgb(22 49 13);
+            background-color: cornflowerblue 23px;
+        }
         #research {
             font-size: 18px;
             width: 100px;
@@ -79,51 +111,59 @@
         }
         
         #fuel {
-            width: 83px;
-            height: 43px;
+            width: 80px;
+            height: 36px;
             text-align: center;
             border-radius: 14px;
             font-size: 20px;
+            cursor: pointer;
+            border: 2px solid  olivedrab;
         }
         
         #fuel:hover {
-            background-color: coral;
+            background-color: rgb(218, 175, 215);
         }
         
         #research {
-            width: 99px;
-            height: 43px;
+            width: 120px;
+            height: 32px;
             text-align: center;
             border-radius: 14px;
             font-size: 18px;
+            cursor: pointer;
+            border: 2px solid olivedrab;
         }
         
         #research:hover {
-            background-color: coral;
+            background-color: rgb(218, 175, 215);
         }
         
         #resea {
-            width: 99px;
-            height: 43px;
+            width: 83px;
+            height: 32px;
             text-align: center;
             border-radius: 14px;
             font-size: 18px;
+            cursor: pointer;
+            border: 2px solid  olivedrab;
         }
         
         #resea:hover {
-            background-color: coral;
+            background-color: rgb(218, 175, 215);
         }
         
         #sub {
-            width: 120px;
+            width: 233px;
             height: 43px;
             text-align: center;
             border-radius: 14px;
             font-size: 18px;
+            cursor: pointer;
+            border: 2px solid  olivedrab;
         }
         
         #sub:hover {
-            background-color: darkcyan;
+            background-color: rgb(26, 243, 243);
         }
         
         #first {
@@ -131,6 +171,7 @@
             height: 25px;
             font-size: 20px;
             text-align: center;
+            border: 2px solid olivedrab;
         }
         
         #second {
@@ -138,6 +179,7 @@
             height: 25px;
             font-size: 20px;
             text-align: center;
+            border: 2px solid olivedrab;
         }
         
         #third {
@@ -145,6 +187,7 @@
             height: 25px;
             font-size: 20px;
             text-align: center;
+            border: 2px solid olivedrab;
         }
         
         #fourth {
@@ -152,6 +195,7 @@
             height: 25px;
             font-size: 20px;
             text-align: center;
+            border: 2px solid olivedrab;
         }
     </style>
 </body>
